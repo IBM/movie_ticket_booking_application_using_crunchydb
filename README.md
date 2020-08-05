@@ -72,7 +72,6 @@ $ git clone https://github.com/IBM/movie_ticket_booking_application_using_crunch
    #### 3.3 Open the booking application
    
    ![](doc/source/images/create.png)
-   
    - Click on `here` hyperlink as shown above
    - Alternative you can open `http://localhost:5000/`, to open the application
    - You will now have the booking application on your screen as follows
@@ -82,6 +81,26 @@ $ git clone https://github.com/IBM/movie_ticket_booking_application_using_crunch
     
 ### 4. Analyse the results
 
-
-
+   - Type your `name`, `phone number` and `select the seats` as shown in the pictue below,
+   
+   ![](doc/source/images/reserveseats.gif)
+   
+   - Your booking will be showcased in the booking details tab. Click on `Reserve More Tickets` to reserve more seats.
+   
+   ![](doc/source/images/viewusers.gif)
+   
+   - All the reserved seats will be blocked as shown below,
+   
+   ![](doc/source/images/reserved.png)
+   
+   - You can view the tables in the CruncyDB console, by running the following commands on the terminal,
+   
+   `kubectl port-forward -n pgo svc/cpdemo-pgadmin 5050:5050`
+   
+   - Open the browser with the URL, `http://localhost:5050/`. This will open the console for `Crunchy Data PostgreSQL` database.
+   
+   For more details on `Crunchy Data PostgreSQL` console, refer to this [tutorial] https://github.com/IBM/perform-crud-operations-using-crunchy-Postgresaql-for-kubernetes-operator-rhm#step-2-perform-crud-operations-on-crunchydb-using-python
+   
+   
+   
 
