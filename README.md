@@ -29,7 +29,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 Please follow the below to setup and run this code pattern.
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster](#2)
+2. [Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster](#2-install-the-crunchydb-operator-from-red)
 3. [Run the Application](#3)
 4. [Analyse the results](#4)
 
@@ -43,7 +43,7 @@ $ git clone https://github.com/IBM/movie_ticket_booking_application_using_crunch
 ### 2. Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster
 
 - Steps to Deploy CrunchyDB Operator from Red Hat Marketplace on a OpenShift Cluster can be found here,
-  - [Steps to Deploy CrunchyDB Operator]()
+  - [Steps to Deploy CrunchyDB Operator](https://github.com/IBM/rhm-crunchydb-operator-install-steps)
 
 ### 3. Run the Application
     
@@ -95,12 +95,19 @@ $ git clone https://github.com/IBM/movie_ticket_booking_application_using_crunch
    
    - You can view the tables in the CruncyDB console, by running the following commands on the terminal,
    
-   `kubectl port-forward -n pgo svc/cpdemo-pgadmin 5050:5050`
+    `kubectl port-forward -n pgo svc/cpdemo-pgadmin 5050:5050`
    
    - Open the browser with the URL, `http://localhost:5050/`. This will open the console for `Crunchy Data PostgreSQL` database.
    
-   For more details on `Crunchy Data PostgreSQL` console, refer to this [tutorial] https://github.com/IBM/perform-crud-operations-using-crunchy-Postgresaql-for-kubernetes-operator-rhm#step-2-perform-crud-operations-on-crunchydb-using-python
+   > For more details on `Crunchy Data PostgreSQL` console, refer to this [tutorial](https://github.com/IBM/perform-crud-operations-using-crunchy-Postgresaql-for-kubernetes-operator-rhm#step-2-perform-crud-operations-on-crunchydb-using-python)
    
+   
+<!-- keep this -->
+## License
+
+This code pattern is licensed under the Apache License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1](https://developercertificate.org/) and the [Apache License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
+
+[Apache License FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
    
    
 
