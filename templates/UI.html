@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+  margin: 60px;
+  background: #111;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+.theatre {
+  margin: 20px auto;
+  max-width: 30%;
+}
+.screen {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-bottom: 5px solid #d8d8d8;
+}
+.screen h1 {
+  color:white;
+  width: 60%;
+  margin: 100px auto 35px auto;
+}
+
+.exit {
+  position: relative;
+  height: 50px;
+}
+.exit:before, .exit:after {
+  content: "EXIT";
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0px 2px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  display: block;
+  position: absolute;
+  background: green;
+  color: white;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.exit:before {
+  left: 0;
+}
+.exit:after {
+  right: 0;
+}
+
+.fuselage {
+  border-right: 5px solid #d8d8d8;
+  border-left: 5px solid #d8d8d8;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.seat {
+  display: flex;
+  flex: 0 0 14.28571428571429%;
+  padding: 5px;
+  position: relative;
+}
+.seat:nth-child(3) {
+  margin-right: 14.28571428571429%;
+}
+.seat input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.seat input[type=checkbox]:checked + label {
+  background: #bada55;
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+.seat input[type=checkbox]:disabled + label {
+  background: #dddddd;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.seat input[type=checkbox]:disabled + label:after {
+  content: "X";
+  text-indent: 0;
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.seat input[type=checkbox]:disabled + label:hover {
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.seat label {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background: #F42536;
+  border-radius: 5px;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+.seat label:before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  top: 1px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+}
+.seat label:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0px 2px #5C6AFF;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.label {
+  color: white;
+  padding: 8px;
+  font-family: Arial;
+}
+.success {background-color: #4CAF50;} 
+.danger {background-color: #f44336;}
+.other {background-color: #ffffff; color: black;} 
+
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+
+
+  function enable(y) {
+    document.getElementById(y).disabled= false;
+
+}
+
+function disable(x) {
+     document.getElementById(x).disabled= true;
+}
+
+var data_seats ={
+"1A":"available","1B":"available","1C":"available","1D":"available","1E":"available","1F":"available",
+"2A":"available","2B":"available","2C":"available","2D":"available","2E":"available","2F":"available",
+"3A":"available","3B":"available","3C":"available","3D":"available","3E":"available","3F":"available",
+"4A":"available","4B":"available","4C":"available","4D":"available","4E":"available","4F":"available",
+"5A":"available","5B":"available","5C":"available","5D":"available","5E":"available","5F":"available",
+"6A":"available","6B":"available","6C":"available","6D":"available","6E":"available","6F":"available",
+"7A":"available","7B":"available","7C":"available","7D":"available","7E":"available","7F":"available",
+"8A":"available","8B":"available","8C":"available","8D":"available","8E":"available","8F":"available",
+"9A":"available","9B":"available","9C":"available","9D":"available","9E":"available","9F":"available",
+"10A":"available","10B":"available","10C":"available","10D":"available","10E":"available","10F":"available"
+}
+
+function data_all(){
+
+$.get("/get").done(function(data) {
+  var obj = JSON.parse(data);
+  console.log(obj);
+  for (x in obj) {
+  if (obj[x] == "blocked"){
+    disable(x)
+    data_seats[x] = "blocked"
+  }
+  else{
+    enable(x)
+  }
+}
+});
+  
+}
+
+function myFunction(z) {
+  var checkBox = document.getElementById(z);
+   if (checkBox.checked == true){
+    data_seats[z]="reserved"
+  } else {
+     data_seats[z]="available"
+  }
+}
+
+function reserve_seats(){
+  let userdetails = {
+name: document.getElementById("name").value,
+number: document.getElementById("phone").value
+};
+
+let formData = new FormData();
+    formData.append("userdetails", JSON.stringify(userdetails));
+    formData.append("data_seats", JSON.stringify(data_seats));
+  $.ajax({
+            url: '/update',
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            cache: false,
+            contentType: false,
+            processData: false,
+        success: function(response) {
+          if (response.flag == 0){
+            //location.reload();
+            location.replace("/details");
+          }
+
+        }});
+console.log(data_seats);
+}
+
+
+
+</script>
+</head>
+<body onload="data_all()">
+<div class="theatre">
+<div class="screen">
+<h1>Mini Screen 1</h1>
+<span class="label success">Selected</span>
+<span class="label danger">Available</span>
+<span class="label other">Reserved</span>
+</div>
+<div class="exit exit--front fuselage">
+</div>
+<ol class="cabin fuselage">
+<li class="row row--1">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('1A')" id="1A">
+<label for="1A">1A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('1B')" id="1B">
+<label for="1B">1B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('1C')" id="1C">
+<label for="1C">1C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('1D')" id="1D">
+<label for="1D">1D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('1E')" id="1E">
+<label for="1E">1E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('1F')" id="1F">
+<label for="1F">1F</label>
+</li>
+</ol>
+</li>
+<li class="row row--2">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('2A')" id="2A">
+<label for="2A">2A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('2B')" id="2B">
+<label for="2B">2B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('2C')" id="2C">
+<label for="2C">2C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('2D')" id="2D">
+<label for="2D">2D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('2E')" id="2E">
+<label for="2E">2E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('2D')" id="2F">
+<label for="2F">2F</label>
+</li>
+</ol>
+</li>
+<li class="row row--3">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('3A')" id="3A">
+<label for="3A">3A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('3B')" id="3B">
+<label for="3B">3B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('3C')" id="3C">
+<label for="3C">3C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('3D')" id="3D">
+<label for="3D">3D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('3E')" id="3E">
+<label for="3E">3E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('3F')" id="3F">
+<label for="3F">3F</label>
+</li>
+</ol>
+</li>
+<li class="row row--4">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('4A')" id="4A">
+<label for="4A">4A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('4B')" id="4B">
+<label for="4B">4B</label>
+</li>
+ <li class="seat">
+<input type="checkbox" onclick="myFunction('4C')" id="4C">
+<label for="4C">4C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('4D')" id="4D">
+<label for="4D">4D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('4E')" id="4E">
+<label for="4E">4E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('4F')" id="4F">
+<label for="4F">4F</label>
+</li>
+</ol>
+</li>
+<li class="row row--5">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('5A')" id="5A">
+<label for="5A">5A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('5B')" id="5B">
+<label for="5B">5B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('5C')" id="5C">
+<label for="5C">5C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('5D')" id="5D">
+<label for="5D">5D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('5E')" id="5E">
+<label for="5E">5E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('5F')" id="5F">
+<label for="5F">5F</label>
+</li>
+</ol>
+</li>
+<li class="row row--6">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('6A')" id="6A">
+<label for="6A">6A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('6B')"id="6B">
+<label for="6B">6B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('6C')" id="6C">
+<label for="6C">6C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('6D')" id="6D">
+<label for="6D">6D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('6E')" id="6E">
+<label for="6E">6E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('6F')" id="6F">
+<label for="6F">6F</label>
+</li>
+</ol>
+</li>
+<li class="row row--7">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('7A')" id="7A">
+<label for="7A">7A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('7B')" id="7B">
+<label for="7B">7B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('7C')" id="7C">
+<label for="7C">7C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('7D')" id="7D">
+<label for="7D">7D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('7E')" id="7E">
+<label for="7E">7E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('7F')" id="7F">
+<label for="7F">7F</label>
+</li>
+</ol>
+</li>
+<li class="row row--8">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('8A')" id="8A">
+<label for="8A">8A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('8B')" id="8B">
+<label for="8B">8B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('8C')" id="8C">
+<label for="8C">8C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('8D')" id="8D">
+<label for="8D">8D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('8E')" id="8E">
+<label for="8E">8E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('8F')" id="8F">
+<label for="8F">8F</label>
+</li>
+</ol>
+</li>
+<li class="row row--9">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('9A')" id="9A">
+<label for="9A">9A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('9B')" id="9B">
+<label for="9B">9B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('9C')" id="9C">
+<label for="9C">9C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('9D')" id="9D">
+<label for="9D">9D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('9E')" id="9E">
+<label for="9E">9E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('9F')" id="9F">
+<label for="9F">9F</label>
+</li>
+</ol>
+</li>
+<li class="row row--10">
+<ol class="seats" type="A">
+<li class="seat">
+<input type="checkbox" onclick="myFunction('10A')" id="10A">
+<label for="10A">10A</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('10B')" id="10B">
+<label for="10B">10B</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('10C')" id="10C">
+<label for="10C">10C</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('10D')" id="10D">
+<label for="10D">10D</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('10E')" id="10E">
+<label for="10E">10E</label>
+</li>
+<li class="seat">
+<input type="checkbox" onclick="myFunction('10F')" id="10F">
+<label for="10F">10F</label>
+</li>
+</ol>
+</li>
+</ol>
+<br><br><br><br>
+
+<input type="text" id="name" placeholder="Enter the name" style="width: 100%;" required/><br>
+<input type="number" id="phone" placeholder="Enter the phone number" style="width: 100%;" required/>
+<button onclick="reserve_seats()" class="button"><span>Reserve Seats</span></button>
+
+</div>
+
+
+
+
+
+</body></html>

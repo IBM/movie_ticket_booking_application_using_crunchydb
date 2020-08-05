@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+​<style>
+
+    .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+</style>
+<head>
+    <title>Movie Bookings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+​
+<body onload="getUsers()">
+
+​
+    <div class="container">
+        <h2>Mini Screen 1 Booking Details</h2>
+        <p id="loadingmsg">Display all the bookings</p>
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Seats Booked</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button class="button" onclick="location.replace('/');">Reserve More Tickets</button>
+    </div>
+​
+</body>
+
+    <script>
+    async function getUsers() {
+        const table = document.getElementById("myTable");
+        const tableRef = table.getElementsByTagName('tbody')[0];
+        const loadingmsg = document.getElementById("loadingmsg");
+        loadingmsg.innerHTML = "loading please wait ...";
+        await fetch('/getUsersDetails').then(async(response) => {
+            data = await response.json();
+            var inx = 1;
+            data.forEach(element => {
+                var row = tableRef.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                cell1.innerHTML = inx;
+                cell2.innerHTML = element.name;
+                cell3.innerHTML = element.phone_no;
+                cell4.innerHTML = element.seats;
+                inx = inx + 1;
+            });
+            loadingmsg.innerHTML = "All the bookings";
+        });
+    }
+</script>
+​
+</html>
