@@ -29,9 +29,9 @@ When the reader has completed this Code Pattern, they will understand how to:
 Please follow the below to setup and run this code pattern.
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster](#2-install-the-crunchydb-operator-from-red)
-3. [Run the Application](#3)
-4. [Analyse the results](#4)
+2. [Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster](#2-install-the-crunchydb-operator-from-red-hat-marketplace-on-openshift-cluster)
+3. [Run the Application](#3-run-the-application)
+4. [Analyse the results](#4-analyse-the-results)
 
 ### 1. Clone the repo
 
