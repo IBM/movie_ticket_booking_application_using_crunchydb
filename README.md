@@ -15,6 +15,10 @@ When the reader has completed this Code Pattern, they will understand how to:
 <!--Optionally, add flow steps based on the architecture diagram-->
 ## Flow
 
+1. User enters his details and reserves his seat.
+2. Application updates Crunchy Data PostgreSQL tables accordingly.
+3. Application fetches the updated data from the tables.
+4. Application displays the updated seats availability data and booking details data that was feteched from the respective tables. 
 
 ## Pre-requisites
 
