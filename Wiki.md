@@ -51,24 +51,20 @@ In this code pattern, you will build a Movie ticket booking application using Cr
 
 > Find the detailed steps for this pattern in the [readme file](https://github.com/IBM/movie_ticket_booking_application_using_crunchydb/blob/master/README.md). The steps will show you how to:
 
-1. [Clone the repo]
-2. [Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster]
-3. [Run the Application]
-4. [Analyse the results]
+1. Clone the repo
+2. Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster
+3. Run the Application
+4. Analyse the results
 
 # Components and services
 
-
-  * [IBM Managed Red Hat OpenShift Cluster](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift)
-  * [Crunchy PostgreSQL for Kubernetes](https://marketplace.redhat.com/en-us/products/crunchy-postgresql-for-kubernetes)
-
+* [IBM Managed Red Hat OpenShift Cluster](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift)
+* [Crunchy PostgreSQL for Kubernetes](https://marketplace.redhat.com/en-us/products/crunchy-postgresql-for-kubernetes)
 
 # Runtimes
 
 * Python 3
 
 # Related IBM Developer content
-
-> List any IBM Developer resources that are closely related to this pattern, such as other patterns, blog posts, tutorials, etc..
 
 * [Perform CRUD operations using Crunchy PostgreSQL for Kubernetes Operator on Red Hat Marketplace](https://github.com/IBM/perform-crud-operations-using-crunchy-Postgresaql-for-kubernetes-operator-rhm): In this tutorial,Perform CRUD operations using Crunchy PostgreSQL for Kubernetes Operator on Red Hat Marketplace. 
