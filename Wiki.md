@@ -1,10 +1,10 @@
 # Short title
 
-Movie ticket booking application
+Build a movie ticket reservation application
 
 # Long title
 
-Build a Movie ticket booking application using Crunchy Data PostgreSQL on Red Hat Marketplace
+Build a movie ticket reservation application using Crunchy Data PostgreSQL on Red Hat Marketplace
 
 # Author
 
@@ -18,11 +18,11 @@ Build a Movie ticket booking application using Crunchy Data PostgreSQL on Red Ha
 
 ### Github repo
 
-* [Build a Movie ticket booking application using Crunchy Data PostgreSQL on Red Hat Marketplace](https://github.com/IBM/movie_ticket_booking_application_using_crunchydb)
+* [Build a movie ticket reservation application using Crunchy Data PostgreSQL on Red Hat Marketplace](https://github.com/IBM/movie_ticket_booking_application_using_crunchydb)
 
 # Summary
 
-In this code pattern, you will build a Movie ticket booking application using Crunchy Data PostgreSQL on Red Hat Marketplace.
+In this code pattern, you will build a movie ticket reservation application using Crunchy Data PostgreSQL on Red Hat Marketplace.
 
 # Technologies
 
@@ -31,29 +31,24 @@ In this code pattern, you will build a Movie ticket booking application using Cr
 
 # Description
 
-Seat booking applications are most commonly used in the box office or ticket office for a theatre, cinema, or concert hall. 
-This application will be used to reserve seats for an individual or a group of individuals. 
-It will also be used to track the details of the person who has booked the tickets.
-This application can furthur enhanced to send instant notifications and email to confirm booking status. 
-In this code pattern, you will build a Movie ticket booking application using Crunchy Data PostgreSQL on Red Hat Marketplace.
-
+Seat booking applications are most commonly used in the box office or ticket office for a theater, cinema, or concert hall. In this code pattern, learn how to use the Crunchy Data PostgreSQL hosted on Red Hat Marketplace to build an application that can reserve seats in a movie theater for an individual or a group of individuals. The application can also capture the details of the person who has booked the tickets. You can further enhance this application to send instant notifications and email to confirm booking status. 
 
 # Flow
 
 ![](doc/source/images/Architecture.png)
 
 1. User enters his details and reserves his seat.
-2. Application updates Crunchy Data PostgreSQL tables accordingly.
+2. Application updates the Crunchy Data PostgreSQL tables accordingly.
 3. Application fetches the updated data from the tables.
-4. Application displays the updated seats availability data and booking details data that was feteched from the respective tables. 
+4. Application displays the updated seats availability data and booking details data that was fetched from the respective tables. 
 
 # Instructions
 
 > Find the detailed steps for this pattern in the [readme file](https://github.com/IBM/movie_ticket_booking_application_using_crunchydb/blob/master/README.md). The steps will show you how to:
 
 1. Clone the repo
-2. Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster
-3. Run the Application
+2. Install the CrunchyDB Operator from Red Hat Marketplace on an OpenShift Cluster
+3. Run the application
 4. Analyse the results
 
 # Components and services
