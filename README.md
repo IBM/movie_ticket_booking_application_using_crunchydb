@@ -33,7 +33,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 Please follow the below to setup and run this code pattern.
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Deploy a Crunchy PostgreSQL for Kubernetes Operator to an OpenShift cluster](#2-install-the-crunchydb-operator-from-red-hat-marketplace-on-openshift-cluster)
+2. [Deploy a Crunchy PostgreSQL for Kubernetes Operator to an OpenShift cluster](2-deploy-a-crunchy-postgresql-for-kubernetes-operator-to-an-openshift-cluster)
 3. [Run the Application](#3-run-the-application)
 4. [Analyse the results](#4-analyse-the-results)
 
