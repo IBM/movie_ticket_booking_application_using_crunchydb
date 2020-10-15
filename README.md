@@ -4,7 +4,7 @@ In this code pattern, you will build a Movie ticket booking application using Cr
 
 When the reader has completed this Code Pattern, they will understand how to:
 
-* Deploy CrunchyDB Operator on OpenShift Cluster.
+* Deploy Crunchy PostgreSQL for Kubernetes Operator on OpenShift Cluster.
 * Create a CrunchyDB cluster and database.
 * Access the cluster on your localhost.
 * Connect and access CrunchyDB data from a python flask application.   
