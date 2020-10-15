@@ -1,6 +1,6 @@
 # Short title
 
-Movie ticket booking application
+Build a movie ticket reservation system
 
 # Long title
 
