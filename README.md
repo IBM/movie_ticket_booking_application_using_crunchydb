@@ -33,7 +33,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 Please follow the below to setup and run this code pattern.
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster](#2-install-the-crunchydb-operator-from-red-hat-marketplace-on-openshift-cluster)
+2. [Deploy a Crunchy PostgreSQL for Kubernetes Operator to an OpenShift cluster](#2-install-the-crunchydb-operator-from-red-hat-marketplace-on-openshift-cluster)
 3. [Run the Application](#3-run-the-application)
 4. [Analyse the results](#4-analyse-the-results)
 
@@ -44,10 +44,10 @@ Clone the `movie_ticket_booking_application_using_crunchydb` repo locally. In a 
 ```
 $ git clone https://github.com/IBM/movie_ticket_booking_application_using_crunchydb
 ```
-### 2. Install the CrunchyDB Operator from Red Hat Marketplace on OpenShift Cluster
+### 2. Deploy a Crunchy PostgreSQL for Kubernetes Operator to an OpenShift cluster
 
-- Steps to Deploy CrunchyDB Operator from Red Hat Marketplace on a OpenShift Cluster can be found here,
-  - [Steps to Deploy CrunchyDB Operator](https://github.com/IBM/rhm-crunchydb-operator-install-steps)
+- Steps to Deploy Crunchy PostgreSQL for Kubernetes Operator from Red Hat Marketplace on OpenShift Cluster can be found here,
+  - [Steps to Deploy Crunchy PostgreSQL for Kubernetes Operator](https://developer.ibm.com/tutorials/deploy-a-crunchy-posgresql-kubernetes-operator-red-hat-marketplace-openshift/)
 
 ### 3. Run the Application
     
