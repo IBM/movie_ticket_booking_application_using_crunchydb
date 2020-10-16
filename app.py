@@ -32,7 +32,7 @@ def home():
 
 @app.route("/create")
 def create_table():
-	conn = psycopg2.connect(database="cpdemo", user="hippo", password="datalake", host="127.0.0.1", port="5432")
+	conn = psycopg2.connect(database="hippo", user="hippo", password="datalake", host="127.0.0.1", port="5432")
 	for k,v in data_seats.items():
 		insert_seats(k, v, conn)
 	conn.close()

@@ -1,6 +1,6 @@
 # Build a movie ticket reservation application using Crunchy Data PostgreSQL on Red Hat Marketplace
 
-In this code pattern, you will build a movie ticket booking application using Crunchy Data PostgreSQL on Red Hat Marketplace.
+In this code pattern, you will build a movie ticket reservation application using Crunchy Data PostgreSQL on Red Hat Marketplace.
 
 After completing this code pattern, you will understand how to:
 
@@ -18,7 +18,8 @@ After completing this code pattern, you will understand how to:
 1. User enters his details and reserves his seat.
 2. Application updates the Crunchy Data PostgreSQL tables accordingly.
 3. Application fetches the updated data from the tables.
-4. Application displays the updated seats availability data and booking details data that was feteched from the respective tables. 
+4. Application displays the updated seats availability data and booking details data that was fetched from the respective tables. 
+
 
 ## Pre-requisites
 
@@ -31,7 +32,7 @@ After completing this code pattern, you will understand how to:
 
 1. [Clone the repo](#1-clone-the-repo)
 2. [Deploy a Crunchy PostgreSQL for Kubernetes Operator to an OpenShift cluster](#2-deploy-a-crunchy-postgresql-for-kubernetes-operator-to-an-openshift-cluster)
-3. [Run the Application](#3-run-the-application)
+3. [Run the application](#3-run-the-application)
 4. [Analyse the results](#4-analyse-the-results)
 
 ## 1. Clone the repo
