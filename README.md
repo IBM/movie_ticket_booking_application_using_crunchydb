@@ -76,7 +76,7 @@ Open the following URL in the browser: `http://localhost:5000/create`
     
 Click on the link. This will create `screen` and `userdetails` tables in the `Crunchy Data PostgreSQL` database  and load it with required data.
     
-    > Note: Please be patient, this step will take a while
+    >> Note: Please be patient, this step will take a while
     
 ### 3.3 Open the booking application
    
