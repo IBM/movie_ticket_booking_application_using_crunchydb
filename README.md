@@ -71,16 +71,16 @@ Go to the cloned repo from [step 1](#1-clone-the-repo). In your terminal, run th
 ### 3.2 Create a table and load it with required data
     
 Open the following URL in the browser: `http://localhost:5000/create`
+
+![](doc/source/images/create.png)
     
-This will create `screen` and `userdetails` tables in the `Crunchy Data PostgreSQL` database  and load it with required data.
+Click on the link. This will create `screen` and `userdetails` tables in the `Crunchy Data PostgreSQL` database  and load it with required data.
     
     > Note: Please be patient, this step will take a while
     
 ### 3.3 Open the booking application
    
 Open the application by following the promptss or opening the `http://localhost:5000/`.
-   
-   ![](doc/source/images/create.png)
    
 The booking application showing the seats in a theater should lead on your screen.
    ![](doc/source/images/booking.png)
