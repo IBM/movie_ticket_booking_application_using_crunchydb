@@ -45,8 +45,7 @@ $ git clone https://github.com/IBM/movie_ticket_booking_application_using_crunch
 ```
 ## 2. Deploy a Crunchy PostgreSQL for Kubernetes Operator to an OpenShift cluster
 
-- Steps to Deploy Crunchy PostgreSQL for Kubernetes Operator from Red Hat Marketplace on OpenShift Cluster can be found here,
-  - [Steps to Deploy Crunchy PostgreSQL for Kubernetes Operator](https://developer.ibm.com/tutorials/deploy-a-crunchy-posgresql-kubernetes-operator-red-hat-marketplace-openshift/)
+Steps to Deploy Crunchy PostgreSQL for Kubernetes Operator from Red Hat Marketplace on OpenShift Cluster can be found at [Steps to Deploy Crunchy PostgreSQL for Kubernetes Operator](https://developer.ibm.com/tutorials/deploy-a-crunchy-posgresql-kubernetes-operator-red-hat-marketplace-openshift/)
 
 ## 3. Run the application
 
@@ -62,7 +61,7 @@ Go to the cloned repo from [step 1](#1-clone-the-repo). In your terminal, run th
         $ pip install -r requirements.txt
         ```
     
-    1. Run the application as follows:
+    2. Run the application as follows:
     
         ```bash
         $ python app.py
@@ -76,7 +75,7 @@ Open the following URL in the browser: `http://localhost:5000/create`
     
 Click on the link. This will create `screen` and `userdetails` tables in the `Crunchy Data PostgreSQL` database  and load it with required data.
     
->> Note: Please be patient, this step will take a while
+> Note: Please be patient, this step will take a while
     
 ### 3.3 Open the booking application
    
