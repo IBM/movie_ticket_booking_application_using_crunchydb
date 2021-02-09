@@ -1,4 +1,4 @@
-# Build a movie ticket reservation application using Crunchy Data PostgreSQL on Red Hat Marketplace
+# Build a movie ticket reservation system
 
 In this code pattern, you will build a movie ticket reservation application using Crunchy Data PostgreSQL on Red Hat Marketplace.
 
@@ -10,7 +10,7 @@ After completing this code pattern, you will understand how to:
 * Connect and access CrunchyDB data from a python flask application.   
 
 <!--add an image in this path-->
-![](doc/source/images/Architecture.png)
+![](doc/source/images/architecture.png)
 
 <!--Optionally, add flow steps based on the architecture diagram-->
 ## Flow
