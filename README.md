@@ -55,17 +55,17 @@ To run the application, follow these steps:
    
 Go to the cloned repo from [step 1](#1-clone-the-repo). In your terminal, run the following commands to install the required python libraries and run the app
     
-    1. Install the required Python libraries by running the following command:
-    
-        ```bash
-        $ pip install -r requirements.txt
-        ```
-    
-    2. Run the application as follows:
-    
-        ```bash
-        $ python app.py
-        ```
+ 1. Install the required Python libraries by running the following command:
+
+```bash
+$ pip install -r requirements.txt
+```
+
+ 2. Run the application as follows:
+
+```bash
+$ python app.py
+```
  
 ### 3.2 Create a table and load it with required data
     
